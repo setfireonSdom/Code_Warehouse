@@ -2,6 +2,7 @@ Node.js 是一个 JavaScript 运行时环境，提供服务器端 JavaScript 开
 
 npm 是 Node.js 的包管理器，用于管理 JavaScript 项目中的依赖包。
 
+```bash
 // npm 版本
 npm --version
 
@@ -23,3 +24,4 @@ npm list -g --depth=0
 
 // 查看项目依赖的包
 npm list --depth=0
+```
