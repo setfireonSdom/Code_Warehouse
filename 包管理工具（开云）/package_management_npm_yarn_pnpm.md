@@ -25,3 +25,16 @@ npm list -g --depth=0
 // 查看项目依赖的包
 npm list --depth=0
 ```
+
+Yarn相关
+```bash
+// 使用命令行检查 Yarn 版本
+yarn --version 
+// 检查 Yarn 的帮助信息
+yarn --help
+
+// 检查系统路径
+which yarn
+type yarn
+
+```
