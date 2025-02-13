@@ -38,3 +38,11 @@ which yarn
 type yarn
 
 ```
+PNPM的相关指令
+```bash
+// 查看版本
+pnpm --version
+
+// 安装pnpm
+sudo npm install -g pnpm@latest
+```
