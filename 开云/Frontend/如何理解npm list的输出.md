@@ -26,7 +26,7 @@ my-dapp@0.1.0 /react_project/my-dapp
 
 ## 1. 项目结构
 你的项目结构如下：
-复制
+```bash
 my-dapp@0.1.0 /react_project/my-dapp
 ├─┬ @testing-library/react@16.2.0
 │ └── react@19.0.0 deduped
@@ -35,6 +35,7 @@ my-dapp@0.1.0 /react_project/my-dapp
 ├─┬ react-scripts@5.0.1
 │ └── react@19.0.0 deduped
 └── react@19.0.0
+```
 
 ## 2. 逐行解释
 顶层包
