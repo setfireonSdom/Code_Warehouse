@@ -38,13 +38,13 @@ my-dapp@0.1.0 /react_project/my-dapp
 ```
 
 ## 2. 逐行解释
-顶层包
+顶层包  
 my-dapp@0.1.0：这是你的项目名称和版本号。my-dapp 是你的项目名，0.1.0 是项目的版本号。
 @testing-library/react@16.2.0：这是一个你直接安装的包，版本号是 16.2.0。它是一个用于测试 React 组件的库。
 react-dom@19.0.0：这是另一个你直接安装的包，版本号是 19.0.0。它是 React 的 DOM 渲染库。
 react-scripts@5.0.1：这是你直接安装的另一个包，版本号是 5.0.1。它是一个用于创建 React 应用的脚手架工具。
 react@19.0.0：这是你直接安装的 React 核心库，版本号是 19.0.0。
-依赖包
+依赖包  
 @testing-library/react@16.2.0 依赖 react@19.0.0。
 deduped 表示 react@19.0.0 已经被安装在其他地方，所以这里不需要重复安装。
 react-dom@19.0.0 依赖 react@19.0.0。
