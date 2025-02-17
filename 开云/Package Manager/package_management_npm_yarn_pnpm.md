@@ -24,6 +24,9 @@ npm list -g --depth=0
 
 // 查看项目依赖的包
 npm list --depth=0
+
+// 删除包
+npm uninstall package-name
 ```
 
 Yarn相关
