@@ -1,4 +1,4 @@
-查看hardhat是否安装
+### 查看hardhat是否安装
 ```bash
 // 检查版本
 npx hardhat --version
@@ -47,3 +47,42 @@ npm install -g hardhat
 
 ### 10. `npx hardhat clean`
    **解释**：清理项目中编译产生的文件。通常在你需要重新编译时，可以先运行这个命令来删除旧的编译文件。
+---
+### Hardhat获取多个本地测试账户
+安装hardhat已经在上面说了，这里获取多个测试账户的前提，是要在本地部署hardhat项目，要运行`npx hardhat node`命令，接着终端出现20个测试账户，这个时候就可以用hardhat获取了，代码如下：\
+```javascript
+const { ethers } = require("hardhat");
+const [owner, addr1, addr2] = await ethers.getSigners(); // 从数组解构出3个账户
+console.log(owner.address); // 0x5B3...eddC4
+console.log(addr1.address); // 0xAb8...f3e43
+console.log(addr2.address); // 0x797...a9270
+```
+
+### 指定部署合约的本地账户。
+```javascript
+const { ethers } = require("hardhat");
+const fs = require("fs");
+
+async function main() {
+  // 解构出三个本地账户
+  const [deployer1,deployer2,deployer3] = await ethers.getSigners();
+  // 指定部署者是deployer3
+  const tokenContractFactory = await ethers.getContractFactory("SimpleDeFiToken",deployer3);
+
+  const token = await tokenContractFactory.deploy();
+  // 验证部署者是谁
+  await token.deployTransaction.wait();
+  console.log("Deployer from transaction: ", token.deployTransaction.from);
+  console.log("Deployer address: ", deployer3.address);
+
+  // console.log("This is token：",token);
+  console.log("Simple DeFi Token Contract Address: ", token.address);
+  console.log("Deployer: ", deployer2.address);
+  console.log("Deployer ETH balance: ", (await deployer2.getBalance()).toString());
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
