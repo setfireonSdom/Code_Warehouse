@@ -51,7 +51,8 @@
    - **例子**：
      - 查看分支：`git branch`
      - 创建分支：`git branch new-feature`
-
+     - 重命名：`git branch -M main `,它的作用是将当前分支的名称重命名为 main。
+     
 ### 11. **git checkout <branch>**
    **用途**：切换到另一个分支。
    - **解释**：`git checkout` 让你可以切换到另一个分支。在你开发一个新功能或者修复一个bug时，通常会使用 `git checkout` 来切换到特定的分支。等同于创建新分支又切换到新分支。
@@ -102,4 +103,14 @@
    - **解释**：如果你在执行 `git merge` 时遇到冲突，并且想放弃合并，可以使用 `git merge --abort` 来撤销合并并恢复到合并前的状态。
    - **例子**：`git merge --abort`
 
+### 21. **git remote -v**
+   查看远程仓库
+
+### 22. **git remote remove <远程仓库名>**
+   删除指定远程仓库。
+
+### 23. **git remote add <远程仓库名> <远程仓库链接>**
+   添加远程仓库
+   - <远程仓库名>：这是你为远程仓库指定的名称，通常是 origin，但也可以是其他自定义名称，比如 my-repo、upstream 等。
+   - <远程仓库链接>：这是远程仓库的 URL，通常是 Git 仓库的 HTTPS 或 SSH 地址。
 ---
