@@ -12,15 +12,15 @@ my-app/
 ```
 public里面是页面所在的地方，src里面是定义组件、入口文件所在的地方。
 
-一般要修改直接修改App.js。
+写组件一般直接修改App.js。
 
-index.html关键内容如下：
+index.html关键内容如下（自动创建）：
 ```
   <body>
     <div id="root"></div>
   </body>
 ```
-index.js（入口文件）长这样：
+index.js（入口文件）长这样（自动创建）：
 ```
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
