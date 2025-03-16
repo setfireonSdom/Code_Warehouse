@@ -60,3 +60,4 @@ readline.question("请输入 MetaMask 地址: ", async (userAddress) => {
 ```
 地址 0x... 的余额: 0.105452450135871459 ETH
 ```
+注意ethers.js的版本！上述版本是：6.13.5
