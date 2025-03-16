@@ -3,4 +3,4 @@
 npx create-react-app@latest my-app
 ```
 项目结构：
-image.png
+![项目结构][image.png]
