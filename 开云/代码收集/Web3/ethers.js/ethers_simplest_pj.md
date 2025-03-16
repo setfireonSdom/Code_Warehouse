@@ -19,7 +19,7 @@ npm list ethers
 const { JsonRpcProvider, formatEther } = require("ethers");
 
 // 使用公共 RPC 或 Infura/Alchemy 替换
-const SEPOLIA_RPC_URL = "link";
+const SEPOLIA_RPC_URL = "RPC link";
 const provider = new JsonRpcProvider(SEPOLIA_RPC_URL);
 
 /**
@@ -60,4 +60,13 @@ readline.question("请输入 MetaMask 地址: ", async (userAddress) => {
 ```
 地址 0x... 的余额: 0.105452450135871459 ETH
 ```
+上面是要在终端输入地址，可以改成直接写代码里面：
+```
+// 运行示例2：输入 MetaMask 地址
+const testAddress = "0xD1FAB21ff192c9838c1242d155879FBa2dA37810"; // 这里换成你的 MetaMask 地址
+getSepoliaBalance(testAddress).then(balance => {
+    console.log(`地址 ${testAddress} 的余额: ${balance} ETH`);
+});
+```
+
 注意ethers.js的版本！上述版本是：6.13.5
