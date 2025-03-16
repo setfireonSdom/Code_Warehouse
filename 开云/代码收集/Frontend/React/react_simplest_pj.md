@@ -45,9 +45,11 @@ export default App;
 ```
 弄简单的，index.js里面的APP组件就是这个，
 页面看起来是怎么样？
+
 ![test](test.png)
 
 删掉的默认的页面是这样：
+
 ![test](test2.png)
 
 # 与Hardhat一起用
@@ -69,5 +71,6 @@ npx hardhat --version
 npx hardhat init
 ```
 输入后会出现一些选择，直接按Enter，一直按。现在目录变成这样：
+
 ![test](test3.png)
 多了contracts等文件。
