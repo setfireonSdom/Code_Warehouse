@@ -20,7 +20,7 @@ index.html关键内容如下：
     <div id="root"></div>
   </body>
 ```
-index.js长这样：
+index.js（入口文件）长这样：
 ```
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -43,9 +43,31 @@ function App() {
 
 export default App;
 ```
-弄了个简单的，index.jsl里面的APP就是这个，
+弄简单的，index.js里面的APP组件就是这个，
 页面看起来是怎么样？
 ![test](test.png)
 
 删掉的默认的页面是这样：
 ![test](test2.png)
+
+# 与Hardhat一起用
+创建react项目的时候已经生成了package.json等文件了，就不再需要输入npm init -y。这些命令在react项目根目录下输入，即my-app/目录。
+## 直接下载hardhat：
+```bash
+npm install --save-dev hardhat
+```
+查看一下hardhat版本：
+```
+npx hardhat --version
+```
+输出
+```
+2.22.19
+```
+## 初始化项目
+```
+npx hardhat init
+```
+输入后会出现一些选择，直接按Enter，一直按。现在目录变成这样：
+![test](test3.png)
+多了contracts等文件。
