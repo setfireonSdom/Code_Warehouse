@@ -22,7 +22,7 @@ my-dapp@0.1.0 /react_project/my-dapp
 │ └── react-dom@19.0.0 deduped
 └── react-dom@19.0.0
 ```
-上面的输出，光看内容的话，不知道它是什么意思。拿 `npm list react` 来举例：
+拿 `npm list react` 来举例：
 
 ## 1. 项目结构
 你的项目结构如下：
