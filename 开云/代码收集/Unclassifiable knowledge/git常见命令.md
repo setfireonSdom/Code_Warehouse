@@ -52,6 +52,7 @@
      - 查看分支：`git branch`
      - 创建分支：`git branch new-feature`
      - 重命名：`git branch -M main `,它的作用是将当前分支的名称重命名为 main。
+     - 详细信息：`git branch -v`,v表示verbose。
      
 ### 11. **git checkout <branch>**
    **用途**：切换到另一个分支。
