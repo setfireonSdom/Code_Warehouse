@@ -31,7 +31,7 @@ root.render(
 ```
 root跟index.html里面的div绑定起来了。`<App />`组件会渲染到div标签里面。`<App />`组件在App.js里面定义。
 
-App.js长什么样：
+App.js长什么样（修改过）：
 ```
 function App() {
   return (
@@ -73,4 +73,5 @@ npx hardhat init
 输入后会出现一些选择，直接按Enter，一直按。现在目录变成这样：
 
 ![test](test3.png)
+
 多了contracts等文件夹。
