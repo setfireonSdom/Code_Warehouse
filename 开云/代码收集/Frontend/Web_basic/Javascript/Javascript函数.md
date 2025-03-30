@@ -114,16 +114,3 @@ class Greeter {
 | generator 函数 | `function* gen() { yield 1; }` | 用于生成器，可配合 `for...of` |
 | async 函数 | `async function fetchData() {}` | 用于异步处理，返回 Promise |
 | async arrow 函数 | `const f = async () => {}` | 语法简洁，适合配合 await |
-
----
-
-## 🧠 建议你文章结构可以这样写：
-
-1. ✨ 开头引入：为什么 JS 有这么多种定义方式（历史 + 语法演进）
-2. 🧩 各种函数定义方式示例 + 优劣对比
-3. 🎯 使用建议：什么场景用什么（箭头函数适合 callback，声明函数适合通用工具，类方法适合组件逻辑等）
-4. 🚨 附录：提升、this 绑定、作用域的细节比较
-
----
-
-需要我帮你把这份内容整理成 markdown 格式文章正文结构吗？或者直接帮你写一部分草稿？
