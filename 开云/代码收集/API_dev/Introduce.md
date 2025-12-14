@@ -29,6 +29,11 @@ def process_data(task_id: int, date: str):
 ```
 如果有人用POST方法访问/data/process,就执行上面这个函数。
 
+## 启动接口服务
+```uvicorn main:app --reload```
+看到类似：
+```Running on http://127.0.0.1:8000```
+
 ### 调用接口
 我们先用 Swagger（FastAPI 自带）。
 
