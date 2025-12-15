@@ -100,3 +100,89 @@ print(base_user)
 }
 """
 
+## 控制流一锅端
+rows = [
+    {"user_id": 1, "age": "25", "status": "active"},
+    {"user_id": 2, "age": None, "status": "active"},
+    {"user_id": 3, "age": "abc", "status": "inactive"},
+    None,
+    {"user_id": 4, "age": "30", "status": "active"},
+]
+
+clean_rows = []
+error_count = 0
+
+for row in rows:
+
+    # 1️⃣ 空数据直接跳过
+    if row is None:
+        continue
+
+    # 2️⃣ 非活跃用户不处理
+    if row.get("status") != "active":
+        continue
+
+    try:
+        # 3️⃣ 类型转换（最容易出错的地方）
+        age = int(row.get("age"))
+
+    except (TypeError, ValueError):
+        # 4️⃣ 脏数据兜底处理
+        error_count += 1
+
+        # 错误太多，直接中断任务
+        if error_count >= 2:
+            break
+
+        continue
+
+    # 5️⃣ 正常数据才会走到这里
+    clean_rows.append({
+        "user_id": row["user_id"],
+        "age": age
+    })
+
+print("清洗后的数据:", clean_rows)
+
+## 函数
+def add_flex(*args, **kwargs):
+    total = 0
+
+    for x in args:
+        total += x
+    
+    for v in kwargs.values():
+        total += v
+
+    return total
+
+
+print(add_flex(1, 2, 3))                 # 6
+print(add_flex(a=10, b=20))              # 30
+print(add_flex(1, 2, a=10, b=20))         # 33
+
+
+def add(a, b):
+    return a + b
+
+
+def safe_int(x, default=0):
+    try:
+        return int(x)
+    except (TypeError, ValueError):
+        return default
+
+
+def main():
+    nums = ["10", "20", "abc", None]
+
+    results = []
+
+    for n in nums:
+        value = safe_int(n)
+        results.append(add(value, 1))
+
+    print(results)
+
+
+main()
