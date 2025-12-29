@@ -1,5 +1,5 @@
 ## list 常用方法
-#1 .append() 往后加一条数据
+#1 .append() 列表往后加一条数据
 rows = []
 rows.append(1)
 rows.append([1,2,3])
