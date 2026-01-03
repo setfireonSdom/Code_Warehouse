@@ -121,3 +121,24 @@ streaming_response.print_response_stream()
 不对。根据信息，小明喜欢吃火锅，而且他最喜欢吃的是雪糕。
 ```  
 以上用的模型是`deepseek-v3.1:671b-cloud`
+
+# 问题
+在做的时候遇到一些易错的地方，要进行推理，首先要有一个`index`，不管是读取保存好的，还是重新创建，首先要有个它，然后`index.as_query_engine()`创建一个`query_engine`，然后就可以用`query_engine`来问问题，'streaming_response = query_engine.query(xxxx)'，然后再`streaming_response.print_response_stream()`  
+
+容易出问题的地方是，得到了`query_engine`，然后更新内置的提示词模版后，写下列代码:
+```
+print("正在创建提问引擎...")
+new_query_engine = index.as_query_engine(
+    # 设置为流式输出
+    streaming=True,
+    # 此处使用qwen-plus模型，你也可以使用阿里云提供的其它qwen的文本生成模型：https://help.aliyun.com/zh/model-studio/getting-started/models#9f8890ce29g5u
+    llm=Ollama(
+    model="deepseek-v3.1:671b-cloud",               # 本地生成模型
+    base_url="http://localhost:11434",
+    request_timeout=120
+    )
+)
+```
+错在这个地方，`index`是最初的`index`,我已经更新了`query_engine`了，得到了`new_query_engine`，但是后面习惯性的重新`as_query_engine`一下，又变成原来的`engine`，一直出错。其实只需要`query`,再`print_response_stream()`
+
+它是对`query_engine`进行模版更新，这个时候已经存在`query_engine`了，之后就直接`query`。
