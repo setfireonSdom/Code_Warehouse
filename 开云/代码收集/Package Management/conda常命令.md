@@ -1,3 +1,5 @@
+不要在 venv / virtualenv / poetry venv 创建的环境中使用 conda；
+但可以、而且是常规做法，在 conda 创建的环境中使用 pip。
 # 📘 Conda 常用指令速查文档
 
 > 目标：**环境管理 + 包管理 + 日常排错**
