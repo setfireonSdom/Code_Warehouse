@@ -1,5 +1,11 @@
 不要在 venv / virtualenv / poetry venv 创建的环境中使用 conda；
 但可以、而且是常规做法，在 conda 创建的环境中使用 pip。
+
+⚠️ 在 conda 环境里，用 pip 的正确顺序  
+推荐顺序：
+系统 / 二进制依赖 → conda
+纯 Python 包 → pip
+
 # 📘 Conda 常用指令速查文档
 
 > 目标：**环境管理 + 包管理 + 日常排错**
