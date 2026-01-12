@@ -28,7 +28,7 @@
 ### 基础用法
 
 ```bash
-conda create -n myenv python=3.10
+conda create -n handllm python=3.11
 ```
 
 ### 常用参数
@@ -354,3 +354,12 @@ conda env list
 conda env export
 conda clean
 ```
+
+# 杂
+```
+conda env create -f env.yml
+```
+这条命令里，-f 的意思是：指定环境定义文件的路径（environment definition file）,默认情况下，    `conda env create` 会自动在当前目录寻找名叫 environment.yml 的文件.
+
+如果你的文件：不在当前目录，或者名字不是 environment.yml（比如叫 env.yml、myproject.yml 等）就需要用 -f（或写全 --file）来明确告诉 conda：“我要用这个文件来创建环境”
+

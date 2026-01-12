@@ -5,7 +5,7 @@ conda create -n handllm python=3.11
 
 pip install --upgrade pip
 pip install ipykernel -i https://pypi.tuna.tsinghua.edu.cn/simple/
-python -m ipykernel install --user --name handllm --display-name "Python (handllm)"
+python -m ipykernel install --user --name hgface --display-name "Python (hgface)"
 ```  
 结果如下：  
 ```
